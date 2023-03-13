@@ -89,6 +89,12 @@ class WordAdapter(private val letterId: String, context: Context) :
             context.startActivity(intent)
         }
 
+        holder.button.setOnClickListener {
+            val queryUrl: Uri = Uri.parse("${DetailActivity.SEARCH_PREFIX}${item}")
+            val intent = Intent(Intent.ACTION_VIEW, queryUrl)
+            context.startActivity(intent)
+        }
+
     }
     // Setup custom accessibility delegate to set the text read with
     // an accessibility service
